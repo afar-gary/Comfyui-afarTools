@@ -1,0 +1,17 @@
+[QWEN_IMAGE]
+model_1:qwen_image_2512_fp8_e4m3fn.safetensors
+lora_1:Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors
+clip_1:qwen_2.5_vl_7b_fp8_scaled.safetensors
+vae:qwen_Image_vae.safetensors
+weight_mode:fp8_e4m3fn_fast
+clip_type:qwen_image
+use_controlnet:True
+control_model:Qwen-Image-2512-Fun-Controlnet-Union-2602.safetensors
+control_strength:0.8
+pos:一个年轻女性，时尚短发，单凤眼，烟熏妆，上身红色无袖紧身包身连体短裙，下穿深灰色珠光透明连裤袜，黑色细高根中靴。站在夜晚的大街上。全身照
+match_size:True
+steps_1:4
+steps_2:5
+denoise_2:0.6
+scale_by_2:1.5
+seed:43
