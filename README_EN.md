@@ -8,7 +8,7 @@ afarTools is a comprehensive plugin package developed by ComfyUI itself. Through
 ---
 
 > **Current Version**: v3.3 
-- ** Updated support for krea2 by adding -ConditioningKrea2Rebalance- to adjust parameters. Thanks to the author: https://github.com/nova452/ComfyUI-ConditioningKrea2Rebalance
+- Updated support for krea2 by adding -ConditioningKrea2Rebalance- to adjust parameters. Thanks to the author: https://github.com/nova452/ComfyUI-ConditioningKrea2Rebalance
 
 ---
 
