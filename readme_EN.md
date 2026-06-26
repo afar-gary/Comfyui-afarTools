@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="./README.md"><img src="https://img.shields.io/badge/🇨🇳_中文-点击切换-blue?style=for-the-badge" alt="中文"></a>
+  <a href="./README_EN.md"><img src="https://img.shields.io/badge/🇬🇧_English-Current_Language-red?style=for-the-badge" alt="English"></a>
+</p>
 # afarTools - ComfyUI Comprehensive Plugin Pack
 
 > **Current Version**: v3.3 
@@ -6,6 +10,7 @@
 <p align="center">
   <img src="./priview.jpg" width="600" alt="screenshot">
 </p>
+
 ---
 
 ## 🧩 Node Introduction
@@ -92,6 +97,10 @@ git clone https://github.com/yourusername/ComfyUI-afarTools.git
 2. Unzip the file and rename the extracted folder to `ComfyUI-afarTools` (or keep the original name).
 3. Place this folder into the `custom_nodes` folder under the ComfyUI root directory.
 4. Restart ComfyUI.
+
+### Note: Related dependencies
+1. The plug-in supports retrieving files in gguf format and relies on the pig file in the gguf plug-in, so the gguf plug-in needs to exist or be installed first: https://github.com/calcuis/gguf
+2. The opencv-python library will be used in CropByMask_Resize and CropByMask_Resize_sam3 nodes. Most plug-ins have actually been installed in advance. If not, you can install them manually. Just enter your own python environment and pip install opencv-python. In fact, the node can be used without installation, but the efficiency and masking results will be far less than those supported by the opencv-python package. If it is not installed, it is recommended to install it.
 
 ---
 

@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="./README.md"><img src="https://img.shields.io/badge/🇨🇳_中文-当前语言-blue?style=for-the-badge" alt="中文"></a>
+  <a href="./README_EN.md"><img src="https://img.shields.io/badge/🇬🇧_English-点击切换-red?style=for-the-badge" alt="English"></a>
+</p>
 # afarTools - ComfyUI 综合插件包
 
 > **当前版本**：v3.3 
@@ -6,6 +10,7 @@
 <p align="center">
   <img src="./priview.jpg" width="600" alt="节点截图">
 </p>
+
 ---
 
 ## 🧩 节点介绍
@@ -92,6 +97,10 @@ git clone https://github.com/你的用户名/ComfyUI-afarTools.git
 2. 解压压缩包，将解压后的文件夹重命名为 `ComfyUI-afarTools`（或保持原名）。
 3. 将该文件夹放入 ComfyUI 根目录下的 `custom_nodes` 文件夹中。
 4. 重启 ComfyUI 即可。
+
+### 注意：相关依赖事项
+1. 插件支持检索gguf格式的文件，依赖gguf插件中的pig文件，所以需要存在或先安装gguf插件：https://github.com/calcuis/gguf
+2. 在CropByMask_Resize，CropByMask_Resize_sam3节点中会使用到opencv-python库，大多插件其实已经提前安装，若没有也可以自己手动安装一下。进入自己的python环境中pip install opencv-python即可。其实不安装，节点也能使用，只是效率和遮罩结果会远不如有opencv-python包的支持。若没有安装，建议安装。
 
 ---
 
