@@ -1,13 +1,14 @@
 [🇨🇳 中文](./README.md) | [🇬🇧 English](./README_EN.md)
 # afarTools - ComfyUI Comprehensive Plugin Pack
-
-> **Current Version**: v3.3 
-- ** Updated support for krea2 by adding -ConditioningKrea2Rebalance- to adjust parameters. Thanks to the author: https://github.com/nova452/ComfyUI-ConditioningKrea2Rebalance
-
 `afarTools` is a self-developed comprehensive plugin pack specifically designed for ComfyUI. Through highly integrated core nodes, it greatly simplifies complex workflows from model loading, parameter configuration, to image editing, dedicated to providing users with a one-stop, high-efficiency image generation and editing experience.
 <p align="center">
   <img src="./priview.jpg" width="600" alt="screenshot">
 </p>
+
+---
+
+> **Current Version**: v3.3 
+- ** Updated support for krea2 by adding -ConditioningKrea2Rebalance- to adjust parameters. Thanks to the author: https://github.com/nova452/ComfyUI-ConditioningKrea2Rebalance
 
 ---
 
