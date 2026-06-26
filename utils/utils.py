@@ -1,4 +1,4 @@
-import os,sys,json,math,textwrap,copy,gc
+import os,sys,importlib.util,json,math,textwrap,copy,gc
 import folder_paths,nodes,torch
 import comfy,comfy.sd,comfy_api
 import comfy.utils
@@ -26,36 +26,66 @@ from ..utils.node_fls import FLSSamplerNodeV4 as fls
 from ..utils.node_krea2_diy import ConditioningKrea2Rebalance as Krea2Rebalance
 
 
+
+
+_gguf_exist = False
+gg = None
 try:
-    addon_dir = os.path.abspath(os.path.join(os.getcwd(),'ComfyUI\custom_nodes'))
-    gguf_dir = os.path.join(addon_dir,'gguf')
-    file_exists = False
-    if os.path.exists(gguf_dir):
-        for name in os.listdir(gguf_dir):
-            full_path = os.path.join(gguf_dir, name)  # 拼接完整路径
-            if os.path.isfile(full_path):  # 判断是否为文件
-                if name.endswith(".py"):  # 匹配后缀
-                    file_exists = True
-                    # print("afar_tools --> 找到gguf插件", full_path)
-                    break
-    # print(f'--current_dir:{os.getcwd()}')
-    # print(f'--gguf_dir:{gguf_dir}')
-    # print(f'--file_exists:{file_exists}')
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    custom_dir = os.path.abspath(os.path.join(current_dir, '..', '..'))
+    gguf_dir = os.path.join(custom_dir, 'gguf')
+    file_path = os.path.join(gguf_dir, 'pig.py')
+    file_exists = os.path.isfile(file_path)
+    
+    # print(f'--current_dir: {current_dir}')
+    # print(f'--gguf_dir: {gguf_dir}')
+    # print(f'--file_exists: {file_exists}')
+    
     if file_exists:
-        if addon_dir not in sys.path:
-            sys.path.append(addon_dir)
-        from gguf import pig as gg  # type:ignore
-        if gg:
+        # ==========================================
+        # 【核心修复】：临时劫持 sys.path 和 sys.modules
+        # 完美解决相对导入报错，且不破坏环境中的官方 gguf 库
+        # ==========================================
+        
+        # 1. 备份现场
+        original_sys_path = sys.path.copy()
+        # 备份所有以 gguf 开头的模块（防止官方库被覆盖）
+        gguf_modules_backup = {k: v for k, v in sys.modules.items() if k == 'gguf' or k.startswith('gguf.')}
+        
+        # 2. 清理缓存：防止 Python 使用已经加载的官方 gguf 缓存
+        for k in list(sys.modules.keys()):
+            if k == 'gguf' or k.startswith('gguf.'):
+                del sys.modules[k]
+                
+        # 3. 提升优先级：将 custom_dir 插入到 sys.path 最前面
+        if custom_dir in sys.path:
+            sys.path.remove(custom_dir)
+        sys.path.insert(0, custom_dir)
+        
+        try:
+            # 4. 执行标准导入（此时 Python 会完美处理 pig.py 内的所有相对/绝对导入）
+            from gguf import pig as gg  # type:ignore
             _gguf_exist = True
-        else:
-            _gguf_exist = False
+            print("✅ 成功加载本地 gguf/pig.py")
+        finally:
+            # 5. 【关键】无论成功失败，必须恢复现场！绝不影响其他依赖官方 gguf 的插件
+            sys.path = original_sys_path
+            
+            # 清理掉刚导入的本地 gguf 模块缓存
+            for k in list(sys.modules.keys()):
+                if k == 'gguf' or k.startswith('gguf.'):
+                    del sys.modules[k]
+            
+            # 把官方的 gguf 模块还回去
+            sys.modules.update(gguf_modules_backup)            
     else:
         _gguf_exist = False
-except ModuleNotFoundError as e:
+        print("⚠️ 未找到 pig.py 文件")
+except Exception as e:
     _gguf_exist = False
-    print(f"❌ 未安装 gguf 包,或gguf/pig文件丢失: {e}")
-    print(f'无法支持gguf模型,屏蔽并切回safetensors模式.')
-    print(f'需手动刷新界面.已加载gguf模型会报红,删除节点重新添加即可.')
+    print(f"❌ 加载 gguf/pig.py 失败: {e}")
+    print(f"无法支持 gguf 模型，屏蔽并切回 safetensors 模式。")
+    print(f"需手动刷新界面。已加载 gguf 模型会报红，删除节点重新添加即可。")
 
 
 # items set
