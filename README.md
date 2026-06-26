@@ -2,6 +2,7 @@
 # afarTools - ComfyUI 综合插件包
 
 > **当前版本**：v3.3 
+- **更新对krea2的支持，加入-ConditioningKrea2Rebalance-调节参数，感谢作者：https://github.com/nova452/ComfyUI-ConditioningKrea2Rebalance
 
 `afarTools` 是一款专为 ComfyUI 打造的自研综合插件包。通过高度集成的核心节点，极大地简化了从模型加载、参数配置到图像编辑的复杂工作流，致力于为用户提供一站式、高效率的生图与修图体验。
 <p align="center">
@@ -33,7 +34,7 @@
 
 ## 🚀 适配模型
 
-本插件经过深度优化，完美兼容以下主流模型系列：
+兼容以下主流模型系列：
 
 - **🤖 通义千问系列**：Qwen Image 2512、Qwen Image Edit 2509/2511、FireRed Edit
 - **🌊 Flux 系列**：Flux1.dev、Chroma、Flux2、Flux2 Klein、Ernie
@@ -96,7 +97,7 @@ git clone https://github.com/你的用户名/ComfyUI-afarTools.git
 4. 重启 ComfyUI 即可。
 
 ### 注意：相关依赖事项
-1. 插件支持检索gguf格式的文件，依赖gguf插件中的pig文件，所以需要存在或先安装gguf插件：https://github.com/calcuis/gguf
+1. 插件支持检索gguf格式的文件，依赖gguf插件中的pig文件，所以需要存在或先安装gguf插件：https://github.com/calcuis/gguf。否则gguf支持将失效，但不影响插件继续使用。
 2. 在CropByMask_Resize，CropByMask_Resize_sam3节点中会使用到opencv-python库，大多插件其实已经提前安装，若没有也可以自己手动安装一下。进入自己的python环境中pip install opencv-python即可。其实不安装，节点也能使用，只是效率和遮罩结果会远不如有opencv-python包的支持。若没有安装，建议安装。
 
 ---

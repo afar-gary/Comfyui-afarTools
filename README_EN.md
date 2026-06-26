@@ -2,6 +2,7 @@
 # afarTools - ComfyUI Comprehensive Plugin Pack
 
 > **Current Version**: v3.3 
+- ** Updated support for krea2 by adding -ConditioningKrea2Rebalance- to adjust parameters. Thanks to the author: https://github.com/nova452/ComfyUI-ConditioningKrea2Rebalance
 
 `afarTools` is a self-developed comprehensive plugin pack specifically designed for ComfyUI. Through highly integrated core nodes, it greatly simplifies complex workflows from model loading, parameter configuration, to image editing, dedicated to providing users with a one-stop, high-efficiency image generation and editing experience.
 <p align="center">
@@ -33,7 +34,7 @@
 
 ## 🚀 Compatible Models
 
-This plugin has been deeply optimized and is perfectly compatible with the following mainstream model series:
+Compatible with the following mainstream model series:
 
 - **🤖 Qwen Series**: Qwen Image 2512, Qwen Image Edit 2509/2511, FireRed Edit
 - **🌊 Flux Series**: Flux1.dev, Chroma, Flux2, Flux2 Klein, Ernie
@@ -96,8 +97,8 @@ git clone https://github.com/yourusername/ComfyUI-afarTools.git
 4. Restart ComfyUI.
 
 ### Note: Related dependencies
-1. The plug-in supports retrieving files in gguf format and relies on the pig file in the gguf plug-in, so the gguf plug-in needs to exist or be installed first: https://github.com/calcuis/gguf
-2. The opencv-python library will be used in CropByMask_Resize and CropByMask_Resize_sam3 nodes. Most plug-ins have actually been installed in advance. If not, you can install them manually. Just enter your own python environment and pip install opencv-python. In fact, the node can be used without installation, but the efficiency and masking results will be far less than those supported by the opencv-python package. If it is not installed, it is recommended to install it.
+1. The plugin supports retrieving files in gguf format and depends on the pig file in the gguf plugin, so you need to have or install the gguf plugin first: https://github.com/calcuis/gguf. Otherwise, GGUF support will expire, but this does not affect the continued use of plugins.
+2. In CropByMask_Resize, CropByMask_Resize_sam3 nodes will use the opencv-python library. Most plugins are actually pre-installed, so if you don't have one, you can install it yourself. Enter your own Python environment and pip install opencv-python. Actually, nodes can still use it without installation, but the efficiency and masking results are much less than support from the opencv-python package. If not installed, it is recommended to install it.
 
 ---
 
