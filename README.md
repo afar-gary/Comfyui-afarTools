@@ -1,6 +1,6 @@
 [中文](./README.md) | [English](./README_EN.md)
 # afarTools - ComfyUI 综合插件包
-`afarTools` 是一款专为 ComfyUI 打造的自研综合插件包。通过高度集成的核心节点，极大地简化了从模型加载、参数配置到图像编辑的复杂工作流，致力于为用户提供一站式、高效率的生图与修图体验。
+afarTools是一款ComfyUI自研综合插件包。通过高度集成的核心节点，极大地简化了从模型加载、参数配置到图像编辑的复杂工作流，并提供一站式、高效率的生图与修图体验。
 <p align="center">
   <img src="./priview.jpg" width="600" alt="节点截图">
 </p>

@@ -1,6 +1,6 @@
 [🇨🇳 中文](./README.md) | [🇬🇧 English](./README_EN.md)
 # afarTools - ComfyUI Comprehensive Plugin Pack
-`afarTools` is a self-developed comprehensive plugin pack specifically designed for ComfyUI. Through highly integrated core nodes, it greatly simplifies complex workflows from model loading, parameter configuration, to image editing, dedicated to providing users with a one-stop, high-efficiency image generation and editing experience.
+afarTools is a comprehensive plugin package developed by ComfyUI itself. Through highly integrated core nodes, it greatly simplifies the complex workflow from model loading, parameter configuration, to image editing, and provides a one-stop, efficient raw and retouching experience.
 <p align="center">
   <img src="./priview.jpg" width="600" alt="screenshot">
 </p>
