@@ -1,4 +1,4 @@
-[🇨🇳 中文](./README.md) | [🇬🇧 English](./README_EN.md)
+<a href="./README.md">🇨🇳 中文</a> | <a href="./README_EN.md">🇬🇧 English</a>
 # afarTools - ComfyUI Comprehensive Plugin Pack
 
 > **Current Version**: v3.3 
