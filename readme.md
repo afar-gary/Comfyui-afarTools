@@ -1,7 +1,4 @@
-<p align="center">
-  <a href="./README.md"><img src="https://img.shields.io/badge/🇨🇳_中文-当前语言-blue?style=for-the-badge" alt="中文"></a>
-  <a href="./README_EN.md"><img src="https://img.shields.io/badge/🇬🇧_English-点击切换-red?style=for-the-badge" alt="English"></a>
-</p>
+[🇨🇳 中文](./README.md) | [🇬🇧 English](./README_EN.md)
 # afarTools - ComfyUI 综合插件包
 
 > **当前版本**：v3.3 
