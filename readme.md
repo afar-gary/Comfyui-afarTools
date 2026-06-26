@@ -1,4 +1,4 @@
-[🇨🇳 中文](README.md) | [🇬🇧 English](README_EN.md)
+[🇨🇳 中文](./README.md) | [🇬🇧 English](./README-EN.md)
 # afarTools - ComfyUI 综合插件包
 
 > **当前版本**：v3.3 
