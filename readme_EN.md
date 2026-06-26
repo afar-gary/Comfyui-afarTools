@@ -1,4 +1,4 @@
-[🇨🇳 中文](README.md) | [🇬🇧 English](README_EN.md)
+[🇨🇳 中文](README.md) | [🇬🇧 English](README-EN.md)
 # afarTools - ComfyUI Comprehensive Plugin Pack
 
 > **Current Version**: v3.3 
